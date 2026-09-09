@@ -1,0 +1,46 @@
+<!-- Mermaid.js for Diagrams -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: false, theme: 'neutral' });
+  document.addEventListener("DOMContentLoaded", async () => {
+    document.querySelectorAll('.language-mermaid, pre code.language-mermaid, pre.mermaid').forEach(el => {
+      const parent = el.closest('.highlighter-rouge') || el.closest('pre') || el;
+      const code = el.innerText || el.textContent;
+      const container = document.createElement('div');
+      container.className = 'mermaid';
+      container.textContent = code.trim();
+      parent.replaceWith(container);
+    });
+    await mermaid.run();
+  });
+</script>
+<!-- MathJax for Formulas -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0 20px 0;
+    padding-top: 20px;
+    border-top: 1px solid #e1e4e8;
+  }
+  .nav-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #159957;
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  .nav-btn.home {
+    background-color: #1e6bb8;
+  }
+  .chart-img {
+    max-width: 100%;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    margin: 15px 0;
+  }
+</style>
